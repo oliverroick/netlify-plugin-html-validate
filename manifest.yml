@@ -1,0 +1,7 @@
+name: netlify-plugin-html-validate
+inputs:
+  - name: ext
+    default: html
+    description: The file-name extension that identifies HTML files; default 'html'
+  - name: config
+    description: Configuration for html-validate
