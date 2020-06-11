@@ -11,7 +11,7 @@ module.exports = {
       );
     } catch (error) {
       if (error.exitCode === 1) {
-        return utils.build.failBuild('Invalid HTML');
+        return utils.build.failBuild('Invalid HTML', { error });
       }
       return utils.build.failBuild('Unknown error', { error });
     }
