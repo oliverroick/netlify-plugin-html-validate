@@ -15,6 +15,7 @@
   "keywords": [
     "netlify",
     "plugin",
+    "netlify-plugin",
     "html",
     "validation"
   ],
