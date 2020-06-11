@@ -2,7 +2,7 @@ module.exports = {
   onPostBuild: async ({ utils, inputs, constants }) => {
     try {
       await utils.run(
-        './node_modules/.bin/html-validate',
+        'html-validate',
         [
           ...inputs.config ? ['--config', inputs.config] : [],
           '--ext', inputs.ext,
