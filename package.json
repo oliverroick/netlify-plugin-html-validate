@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-html-validate",
-  "version": "0.1.1-alpha.0",
+  "version": "0.1.1",
   "description": "Netlify plugin for post-build validation of HTML",
   "main": "index.js",
   "scripts": {
