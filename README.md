@@ -14,7 +14,7 @@ npm i --s netlify-plugin-html-validate
 
 ```toml
 [[plugins]]
-  package = "netlify-plugin-minify-html"
+  package = "netlify-plugin-html-validate"
 
   [plugins.inputs]
     ext = "html"
