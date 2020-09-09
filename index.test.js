@@ -31,6 +31,20 @@ tap.test('overwrites config path', async (t) => {
   t.sameStrict(actual, expected, 'Function called with incorrect parameters');
 });
 
+tap.test('overwrites source path', async (t) => {
+  const run = sinon.fake();
+  await onPostBuild({
+    inputs: { ext: 'html', path: 'dist' },
+    constants: { PUBLISH_DIR: '_site' },
+    utils: { run },
+  });
+
+  const expected = ['html-validate', ['--ext', 'html', 'dist']];
+  const actual = run.getCall(0).args;
+
+  t.sameStrict(actual, expected, 'Function called with incorrect parameters');
+});
+
 tap.test('catches validation error', async (t) => {
   const error = new Error('Something is wrong');
   error.exitCode = 1;

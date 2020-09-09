@@ -27,6 +27,7 @@ The following parameters can be used for `plugin.inputs`
 |-----------|------------------------------------------------------------------------------------------------------------------------------|----------|---------|
 | `ext`     | The file-name extension that identifies HTML files                                                                           | no       | `html`  |
 | `config`  | Configuration for `html-validate`; e.g. `.htmlvalidate.json`. If left blank, `html-validate`'s default options will be used. | no       |         |
+| `path`  | Source to validate; provide a file name, directory or glob pattern. | no       |         |
 
 ### Configure validation rules for `html-validate`
 
