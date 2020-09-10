@@ -4,7 +4,7 @@
   "description": "Netlify plugin for post-build validation of HTML",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tap",
     "preversion": "if [[ \"$(git rev-parse --abbrev-ref HEAD)\" != \"master\" ]]; then echo \"Not on master\" && exit 1; fi",
     "postversion": "git push && git push --tags"
   },
@@ -27,5 +27,9 @@
   "homepage": "https://github.com/oliverroick/netlify-plugin-html-validate#readme",
   "dependencies": {
     "html-validate": "^2.23.0"
+  },
+  "devDependencies": {
+    "sinon": "^9.0.3",
+    "tap": "^14.10.8"
   }
 }
