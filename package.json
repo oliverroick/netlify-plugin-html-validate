@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tap",
+    "lint": "eslint *.js",
     "preversion": "if [[ \"$(git rev-parse --abbrev-ref HEAD)\" != \"master\" ]]; then echo \"Not on master\" && exit 1; fi",
     "postversion": "git push && git push --tags"
   },
@@ -29,6 +30,9 @@
     "html-validate": "^2.23.0"
   },
   "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "sinon": "^9.0.3",
     "tap": "^14.10.8"
   }
