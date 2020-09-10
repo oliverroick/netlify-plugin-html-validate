@@ -6,8 +6,8 @@ module.exports = {
         [
           ...inputs.config ? ['--config', inputs.config] : [],
           '--ext', inputs.ext,
-          constants.PUBLISH_DIR
-        ]
+          constants.PUBLISH_DIR,
+        ],
       );
     } catch (error) {
       if (error.exitCode === 1) {
@@ -15,5 +15,5 @@ module.exports = {
       }
       return utils.build.failBuild('Unknown error', { error });
     }
-  }
+  },
 };

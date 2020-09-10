@@ -1,69 +1,69 @@
-const t = require('tap');
+const tap = require('tap');
 const sinon = require('sinon');
 
-const onPostBuild = require('./index.js').onPostBuild;
+const { onPostBuild } = require('./index.js');
 
-t.test('calls utils.run with defaults', async (t) => {
+tap.test('calls utils.run with defaults', async (t) => {
   const run = sinon.fake();
   await onPostBuild({
     inputs: { ext: 'html' },
-    constants: { PUBLISH_DIR: '_site'},
-    utils: { run }
+    constants: { PUBLISH_DIR: '_site' },
+    utils: { run },
   });
 
   const expected = ['html-validate', ['--ext', 'html', '_site']];
   const actual = run.getCall(0).args;
-  
+
   t.sameStrict(actual, expected, 'Function called with incorrect parameters');
 });
 
-t.test('overwrites config path', async (t) => {
+tap.test('overwrites config path', async (t) => {
   const run = sinon.fake();
   await onPostBuild({
     inputs: { ext: 'html', config: 'config.json' },
-    constants: { PUBLISH_DIR: '_site'},
-    utils: { run }
+    constants: { PUBLISH_DIR: '_site' },
+    utils: { run },
   });
 
   const expected = ['html-validate', ['--config', 'config.json', '--ext', 'html', '_site']];
   const actual = run.getCall(0).args;
-  
+
   t.sameStrict(actual, expected, 'Function called with incorrect parameters');
 });
 
-t.test('catches validation error', async (t) => {
+tap.test('catches validation error', async (t) => {
   const error = new Error('Something is wrong');
   error.exitCode = 1;
-  const run = () => { throw error; }
-  const failBuild = (msg, err) => ({msg, err})
+  const run = () => { throw error; };
+  const failBuild = (msg, err) => ({ msg, err });
 
   const actual = await onPostBuild({
     inputs: { ext: 'html' },
-    constants: { PUBLISH_DIR: '_site'},
-    utils: { run, build: { failBuild } }
+    constants: { PUBLISH_DIR: '_site' },
+    utils: { run, build: { failBuild } },
   });
 
   const expected = {
     msg: 'Invalid HTML',
-    err: { error }
-  }
+    err: { error },
+  };
   t.sameStrict(actual, expected);
 });
 
-t.test('catches unkown error', async (t) => {
+tap.test('catches unkown error', async (t) => {
   const error = new Error('Something is wrong');
-  const run = () => { throw error; }
-  const failBuild = (msg, err) => ({msg, err})
+  const run = () => { throw error; };
+  const failBuild = (msg, err) => ({ msg, err });
 
   const actual = await onPostBuild({
     inputs: { ext: 'html' },
-    constants: { PUBLISH_DIR: '_site'},
-    utils: { run, build: { failBuild } }
+    constants: { PUBLISH_DIR: '_site' },
+    utils: { run, build: { failBuild } },
   });
 
   const expected = {
     msg: 'Unknown error',
-    err: { error }
-  }
-  t.sameStrict(actual, expected)
+    err: { error },
+  };
+  t.sameStrict(actual, expected);
 });
