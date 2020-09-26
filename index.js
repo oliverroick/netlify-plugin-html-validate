@@ -6,7 +6,7 @@ module.exports = {
         [
           ...inputs.config ? ['--config', inputs.config] : [],
           '--ext', inputs.ext,
-          constants.PUBLISH_DIR,
+          inputs.path || constants.PUBLISH_DIR,
         ],
       );
     } catch (error) {

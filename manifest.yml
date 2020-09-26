@@ -5,3 +5,5 @@ inputs:
     description: The file-name extension that identifies HTML files; default 'html'
   - name: config
     description: Configuration for html-validate
+  - name: path
+    description: Source to validate; provide a file name, directory or glob pattern.
