@@ -27,13 +27,13 @@
   },
   "homepage": "https://github.com/oliverroick/netlify-plugin-html-validate#readme",
   "dependencies": {
-    "html-validate": "^2.23.0"
+    "html-validate": "^4.6.0"
   },
   "devDependencies": {
-    "eslint": "^7.8.1",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "sinon": "^9.0.3",
-    "tap": "^14.10.8"
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "sinon": "^9.2.4",
+    "tap": "^14.11.0"
   }
 }
