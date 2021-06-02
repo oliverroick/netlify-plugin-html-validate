@@ -1,7 +1,7 @@
 const tap = require('tap');
 const sinon = require('sinon');
 
-const { onPostBuild } = require('./index.js');
+const { onPostBuild } = require('./index');
 
 tap.test('calls utils.run with defaults', async (t) => {
   const run = sinon.fake();
