@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/oliverroick/netlify-plugin-html-validate#readme",
   "dependencies": {
-    "html-validate": "^4.6.0"
+    "html-validate": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
