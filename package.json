@@ -33,7 +33,7 @@
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
-    "sinon": "^10.0.0",
+    "sinon": "^11.1.2",
     "tap": "^15.0.1"
   }
 }
