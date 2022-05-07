@@ -1,5 +1,8 @@
 name: "Lint"
 
+env:
+  NODE: 14
+
 on:
   push:
     branches: [master, ]
@@ -17,8 +20,10 @@ jobs:
         fetch-depth: 2
     - run: git checkout HEAD^2
       if: ${{ github.event_name == 'pull_request' }}
-    - name: Setup node
+    - name: Setup node ${{ env.NODE }}
       uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.NODE }}
     - name: test
       run: |
         npm ci
